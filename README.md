@@ -1,2 +1,2 @@
 # SecureKeyGen
-Password validation and Generator
+Password validation and Generator.
