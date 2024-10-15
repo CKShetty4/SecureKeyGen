@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Password Validator & Generator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Validator & Generator</title>
+        <link rel="stylesheet" href="style.css">    
+    </head>
 <body>
   <div class="container">
     <!-- Password Validator Section -->
@@ -25,18 +25,20 @@
     <div class="generator-section">
       <h2>Password Generator</h2>
       <label for="length">Password Length:</label>
+      <div class="validation-checklist">
       <input type="number" id="length" min="6" max="20" value="12"><br>
       <input type="checkbox" id="uppercase" checked> Include Uppercase Letters<br>
       <input type="checkbox" id="lowercase" checked> Include Lowercase Letters<br>
       <input type="checkbox" id="numbers" checked> Include Numbers<br>
       <input type="checkbox" id="symbols" checked> Include Special Characters<br>
+    </div>
       <button onclick="generatePassword()">Generate Password</button>
       <p id="generatedPassword"></p>
     </div>
+    <footer>
+        <p>Version 1.0 by CKShetty</p>
+    </footer>
   </div>
-  <footer>
-    <p>Version 1.0 by CKShetty</p>
-</footer>
   <script src="app.js"></script>
 </body>
 </html>
