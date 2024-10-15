@@ -42,6 +42,8 @@ function generatePassword() {
     if (includeLowercase) charset += 'abcdefghijklmnopqrstuvwxyz';
     if (includeNumbers) charset += '0123456789';
     if (includeSymbols) charset += '!@#$%^&*()_+~';
+    document.getElementById('copyButton').style.display = 'none';
+
     if (length < 6) {
         document.getElementById('generatedPassword').textContent = "Password length must be at least 6 characters.";
         document.getElementById('generatedPassword').style.color = "red";
