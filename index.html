@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Password Validator & Generator</title>
-        <link rel="stylesheet" href="style.css">    
-    </head>
-<body>
-  <div class="container">
-    <!-- Password Validator Section -->
-    <div class="validator-section">
-      <h2>Password Validator</h2>
-      <input type="password" id="password" placeholder="Enter your password" oninput="validatePassword()">
-      <div class="validation-checklist">
-        <label><input type="checkbox" id="lengthCheck" disabled> At least 6 characters</label><br>
-        <label><input type="checkbox" id="digitCheck" disabled> Contains a digit</label><br>
-        <label><input type="checkbox" id="specialCharCheck" disabled> Contains a special character</label><br>
-        <label><input type="checkbox" id="caseCheck" disabled> Contains both uppercase and lowercase</label>
-      </div>
-      <p id="feedback"></p>
-    </div>
 
-    <!-- Password Generator Section -->
-    <div class="generator-section">
-      <h2>Password Generator</h2>
-      <label for="length">Password Length:</label>
-      <div class="validation-checklist">
-      <input type="number" id="length" min="6" max="20" value="12"><br>
-      <input type="checkbox" id="uppercase" checked> Include Uppercase Letters<br>
-      <input type="checkbox" id="lowercase" checked> Include Lowercase Letters<br>
-      <input type="checkbox" id="numbers" checked> Include Numbers<br>
-      <input type="checkbox" id="symbols" checked> Include Special Characters<br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validator & Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Password Validator Section -->
+        <div class="validator-section">
+            <h2>Password Validator</h2>
+            <input type="password" id="password" placeholder="Enter your password" oninput="validatePassword()">
+            <div class="validation-checklist">
+                <label><input type="checkbox" id="lengthCheck" disabled> At least 6 characters</label><br>
+                <label><input type="checkbox" id="digitCheck" disabled> Contains a digit</label><br>
+                <label><input type="checkbox" id="specialCharCheck" disabled> Contains a special character</label><br>
+                <label><input type="checkbox" id="caseCheck" disabled> Contains both uppercase and lowercase</label>
+            </div>
+            <p id="feedback"></p>
+        </div>
+
+        <!-- Password Generator Section -->
+        <div class="generator-section">
+            <h2>Password Generator</h2>
+            <label for="length">Password Length:</label>
+            <div class="validation-checklist">
+                <input type="number" id="length" min="6" max="20" value="12"><br>
+                <input type="checkbox" id="uppercase" checked> Include Uppercase Letters<br>
+                <input type="checkbox" id="lowercase" checked> Include Lowercase Letters<br>
+                <input type="checkbox" id="numbers" checked> Include Numbers<br>
+                <input type="checkbox" id="symbols" checked> Include Special Characters<br>
+            </div>
+            <button onclick="generatePassword()">Generate Password</button>
+            <div class="passwordcopy">
+                <p id="generatedPassword"></p>
+                <button class="btn-copy">
+                    <span data-text-end="Copied!" data-text-initial="Copy to clipboard" class="cp-tooltip"></span>
+                    <span>
+                        <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35"
+                            y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" class="cp-clipboard">
+                            <g>
+                                <path fill="currentColor"
+                                    d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z">
+                                </path>
+                            </g>
+                        </svg>
+                        <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0"
+                            x="0" height="18" width="18" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" class="cp-check-mark">
+                            <g>
+                                <path data-original="#000000" fill="currentColor"
+                                    d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z">
+                                </path>
+                            </g>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <footer>
+            <p>Version 1.0 by CKShetty</p>
+        </footer>
     </div>
-      <button onclick="generatePassword()">Generate Password</button>
-      <p id="generatedPassword"></p>
-    </div>
-    <footer>
-        <p>Version 1.0 by CKShetty</p>
-    </footer>
-  </div>
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
