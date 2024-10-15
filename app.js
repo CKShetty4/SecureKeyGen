@@ -59,3 +59,16 @@ function generatePassword() {
     document.getElementById('generatedPassword').textContent = password;
     document.getElementById('generatedPassword').style.color = "green";
 }
+
+//Copy to Clipboard
+function copyToClipboard() {
+    const passwordText = document.getElementById('generatedPassword').textContent;
+  
+    const textarea = document.createElement('textarea');
+    textarea.value = passwordText;
+    document.body.appendChild(textarea);
+    textarea.select(); 
+    document.execCommand('copy'); 
+    document.body.removeChild(textarea); 
+  }
+  
