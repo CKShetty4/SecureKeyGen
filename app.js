@@ -57,6 +57,7 @@ function generatePassword() {
         password += charset[randomIndex];
     }
     document.getElementById('generatedPassword').textContent = password;
+    document.getElementById('copyButton').style.display = 'block';
     document.getElementById('generatedPassword').style.color = "green";
 }
 
